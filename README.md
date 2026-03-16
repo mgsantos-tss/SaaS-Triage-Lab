@@ -24,9 +24,10 @@ I built this mockup Portfolio Project to simulate troubleshooting I do in a Tech
 ### 2. Finding a Billing Mismatch (SQL)
 **Problem:** A user (`help_me@test.com`) reported they paid for an upgrade but are still stuck on the "Free" plan.
 **Investigation:** I ran a `JOIN` query and found that the payment was "Success," but the user's plan type never updated.
-**Resolution:** I executed an `UPDATE` command to manually sync the user to the "Premium" tier, resolving the access issue immediately.
-
 ![SQL Triage Screenshot](02_database_triage.png)
+
+**Resolution:** I executed an `UPDATE` command to manually sync the user to the "Premium" tier, resolving the access issue immediately.
+![SQL Resolution](05_sql_resolution.png)
 
 ---
 
