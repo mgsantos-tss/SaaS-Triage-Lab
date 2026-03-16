@@ -17,7 +17,7 @@ I built this lab to simulate the day-to-day troubleshooting I do in a Tier-2 Sup
 **Problem:** Need to verify the local application server is responding to requests.
 **Fix:** Enabled Internet Information Services (IIS) on my Windows machine and verified the `localhost` handshake was successful.
 
-![IIS Screenshot](01_local_iis_server.png)
+![IIS Screenshot](01_local_iis_server.PNG)
 
 ---
 
@@ -25,7 +25,7 @@ I built this lab to simulate the day-to-day troubleshooting I do in a Tier-2 Sup
 **Problem:** A user (`help_me@test.com`) reported they paid for an upgrade but are still stuck on the "Free" plan.
 **Investigation:** I ran a `JOIN` query between the users and payments tables. I found that the payment was "Success," but the user's plan type never updated in the database.
 
-![SQL Triage Screenshot](02_database_triage.png)
+![SQL Triage Screenshot](02_database_triage.PNG)
 
 ---
 
@@ -34,7 +34,7 @@ I built this lab to simulate the day-to-day troubleshooting I do in a Tier-2 Sup
 **Investigation:** I used `grep` in the Ubuntu terminal to search the `triage.log` file for errors. I found a `500 ERROR` showing a `DB_CONNECTION_TIMEOUT`, which explains why the update failed.
 **Command:** `grep "ERROR" triage.log`
 
-![Linux Terminal Screenshot](03_linux_log_analysis.png)
+![Linux Terminal Screenshot](03_linux_log_analysis.PNG)
 
 ---
 
@@ -42,7 +42,7 @@ I built this lab to simulate the day-to-day troubleshooting I do in a Tier-2 Sup
 **Problem:** Testing if the user data is actually reachable by the front-end.
 **Action:** Ran a `GET` request to pull user details. Confirmed the server is returning a `200 OK` status and the correct JSON data.
 
-![Postman Screenshot](04_api_verification.png)
+![Postman Screenshot](04_api_verification.PNG)
 
 ---
 
