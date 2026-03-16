@@ -18,6 +18,9 @@ I built this mockup Portfolio Project to simulate troubleshooting I do in a Tech
 
 ![IIS Screenshot](01_local_iis_server.png)
 
+**Resolution:** Executed a targeted `UPDATE` to correct the account status. Verified that the user now has access to their paid features.
+![SQL Resolution](05_sql_resolution.png)
+
 ---
 
 ### 2. Finding a Billing Mismatch (SQL)
