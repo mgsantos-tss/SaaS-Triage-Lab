@@ -1,5 +1,4 @@
-# Technical Support & Triage Lab (SaaS)
-# MG Santos
+# MG Santos Technical Support & Triage Lab (SaaS)
 
 ## Project Overview
 I built this lab to simulate the day-to-day troubleshooting I do in a Tier-2 Support role. Instead of just reading about tools, I set up a local environment to show how I actually track down bugs across the server, database, and API layers.
