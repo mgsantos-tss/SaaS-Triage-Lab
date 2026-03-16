@@ -1,4 +1,4 @@
-# MG Santos Technical Support Specialist
+# MG Santos Technical Support Portfolio
 
 ## Project Overview
 I built this mockup Portfolio Project to simulate troubleshooting I do in a Technical Support role. Instead of just reading about tools, I set up a local environment to show how I actually track down bugs across the server, database, and API layers.
