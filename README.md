@@ -4,7 +4,6 @@
 This project simulates a Tier-2 Technical Support environment. I have built a live "sandbox" to demonstrate how I identify, investigate, and resolve complex technical issues across the entire SaaS stack.
 
 ## 🛠️ Tech Stack
-* **Cloud:** AWS (EC2 Windows Server 2022)
 * **Web Server:** IIS (Internet Information Services)
 * **Database:** PostgreSQL (pgAdmin 4)
 * **OS/Terminal:** Linux (Ubuntu/WSL)
