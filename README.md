@@ -18,8 +18,7 @@ I built this mockup Portfolio Project to simulate troubleshooting I do in a Tech
 
 ![IIS Screenshot](01_local_iis_server.png)
 
-**Resolution:** Executed a targeted `UPDATE` to correct the account status. Verified that the user now has access to their paid features.
-![SQL Resolution](05_sql_resolution.png)
+
 
 ---
 
@@ -28,6 +27,9 @@ I built this mockup Portfolio Project to simulate troubleshooting I do in a Tech
 **Investigation:** I ran a `JOIN` query between the users and payments tables. I found that the payment was "Success," but the user's plan type never updated in the database.
 
 ![SQL Triage Screenshot](02_database_triage.png)
+
+**Resolution:** Executed a targeted `UPDATE` to correct the account status. Verified that the user now has access to their paid features.
+![SQL Resolution](05_sql_resolution.png)
 
 ---
 
