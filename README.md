@@ -1,49 +1,50 @@
-SaaS Application Infrastructure & Triage Lab
+# Technical Support & Triage Lab (SaaS)
 
-📌 Project Overview
-This project simulates a Tier-2 Technical Support environment. I have built a local "sandbox" to demonstrate how I identify, investigate, and resolve technical issues across the stack. This lab focuses on root-cause analysis rather than just surface-level fixes.
+## Project Overview
+I built this lab to simulate the day-to-day troubleshooting I do in a Tier-2 Support role. Instead of just reading about tools, I set up a local environment to show how I actually track down bugs across the server, database, and API layers.
 
-🛠️ Tech Stack
-Web Server: Local IIS (Internet Information Services) environment
+## Tools Used
+* **Windows IIS:** To host the local web environment.
+* **PostgreSQL:** For querying and fixing backend data.
+* **Linux (WSL/Ubuntu):** For digging through server logs via the command line.
+* **Postman:** To verify API health and response data.
 
-Database: PostgreSQL 16 (Managed via pgAdmin 4)
+---
 
-OS/Terminal: Linux (Ubuntu 22.04 via WSL)
+## Troubleshooting Scenarios
 
-API Testing: Postman
+### 1. Confirming Server Uptime
+**Problem:** Need to verify the local application server is responding to requests.
+**Fix:** Enabled Internet Information Services (IIS) on my Windows machine and verified the `localhost` handshake was successful.
 
-🚀 Support Scenarios & Resolutions
-1. Web Server Environment Setup
-Scenario: Establishing a local hosting environment to mimic a company's application server.
+![IIS Screenshot](01_local_iis_server.png)
 
-Action: Configured and enabled Internet Information Services (IIS) locally to handle web requests.
+---
 
-Proof of Work:
+### 2. Finding a Billing Mismatch (SQL)
+**Problem:** A user (`help_me@test.com`) reported they paid for an upgrade but are still stuck on the "Free" plan.
+**Investigation:** I ran a `JOIN` query between the users and payments tables. I found that the payment was "Success," but the user's plan type never updated in the database.
 
-2. Database Triage: Billing Sync Failure (SQL)
-Scenario: A customer (help_me@test.com) reported a plan mismatch. They paid for an upgrade, but the system still shows them on the "free" tier.
+![SQL Triage Screenshot](02_database_triage.png)
 
-Investigation: Performed a JOIN query in the saas_platform database between support_users and payments to identify the sync error.
+---
 
-Resolution: (Next Step) Execute an UPDATE command to synchronize the plan_type based on the verified payment.
+### 3. Log Diving for Root Cause (Linux)
+**Problem:** Why didn't the billing sync work?
+**Investigation:** I used `grep` in the Ubuntu terminal to search the `triage.log` file for errors. I found a `500 ERROR` showing a `DB_CONNECTION_TIMEOUT`, which explains why the update failed.
+**Command:** `grep "ERROR" triage.log`
 
-Proof of Work:
+![Linux Terminal Screenshot](03_linux_log_analysis.png)
 
-3. Log Diving: Server-Side Error Identification (Linux)
-Scenario: Users reported "Unexpected Errors" during the upgrade process.
+---
 
-Investigation: Used the Linux command line to parse triage.log. Utilized grep to isolate a 500 ERROR which revealed a DB_CONNECTION_TIMEOUT.
+### 4. API Response Testing (Postman)
+**Problem:** Testing if the user data is actually reachable by the front-end.
+**Action:** Ran a `GET` request to pull user details. Confirmed the server is returning a `200 OK` status and the correct JSON data.
 
-Command Used: grep "ERROR" triage.log
+![Postman Screenshot](04_api_verification.png)
 
-Proof of Work:
+---
 
-4. API Health Verification (Postman)
-Scenario: Confirming the application's backend is responding correctly to data requests.
-
-Action: Sent a GET request to the user endpoint. Verified the system returned a 200 OK status and valid JSON metadata.
-
-Proof of Work:
-
-🏁 Conclusion
-This lab demonstrates my ability to navigate different technical layers—server, database, and API—to solve customer-facing problems. By using these tools together, I can provide faster resolutions and more accurate technical reporting.
+## Final Thoughts
+This project shows I can jump into different parts of a tech stack to find the root cause of a ticket. I don't just "guess"—I use logs and database queries to prove what's broken before trying to fix it.
