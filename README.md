@@ -1,4 +1,5 @@
 SaaS Application Infrastructure & Triage Lab
+
 📌 Project Overview
 This project simulates a Tier-2 Technical Support environment. I have built a local "sandbox" to demonstrate how I identify, investigate, and resolve technical issues across the stack. This lab focuses on root-cause analysis rather than just surface-level fixes.
 
